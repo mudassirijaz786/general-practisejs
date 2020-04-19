@@ -81,3 +81,46 @@ Object.defineProperty(this, "defaultLocation", {
     defaultLocation = value;
   },
 });
+
+// 1 object literal
+
+let circleLiteral = {
+  //properties
+  radius: 1,
+  location: {
+    x: 1,
+    y: 1,
+  },
+  //methods
+  draw: function () {
+    console.log("draw");
+  },
+};
+
+circleLiteral.draw();
+
+// 2 factory functions
+
+createCircle = (radius) => {
+  return {
+    radius,
+    draw: () => {
+      console.log("draw");
+    },
+  };
+};
+
+const circleFactory = createCircle(2);
+circleFactory.draw();
+
+// 3 constructor functions
+
+function CircleClass(radius) {
+  this.radius = radius;
+  this.draw = () => {
+    console.log("draw");
+  };
+}
+
+const circleConstructor = new CircleClass(2);
+circleConstructor.draw();
